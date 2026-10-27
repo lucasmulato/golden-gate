@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", "Segoe UI", sans-serif;
+  --font-display: "Montserrat", "Segoe UI", sans-serif;
+  --color-navy: #323f54;
+  --color-navy-2: #3f4f69;
+  --color-ink: #19191a;
+  --color-peach: #fd9e6f;
+  --color-peach-deep: #e88752;
+  --color-muted: #7c8799;
+  --color-mist: #a0aaba;
+  --color-line: #e6e8ec;
+  --color-soft: #f6f7f9;
+  --color-paper: #ffffff;
+  --color-peach-soft: #fff1e8;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: #fd9e6f;
+    color: #323f54;
+  }
+}
+
+.frame-photo {
+  aspect-ratio: 3 / 2;
+}
+
+.hero-title {
+  font-size: clamp(3.4rem, 10vw, 7rem);
+  line-height: 0.92;
+}
+
+.band-photo {
+  height: 22rem;
+}
+
+.hero-frame {
+  min-height: 78vh;
+}
+
+.chat-panel {
+  height: min(34rem, 72vh);
+  width: min(22.5rem, calc(100vw - 2rem));
+  box-shadow: 0 16px 40px rgba(25, 25, 26, 0.28);
+}
+
+@media (min-width: 768px) {
+  .band-photo {
+    height: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
